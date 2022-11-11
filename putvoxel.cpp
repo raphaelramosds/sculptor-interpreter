@@ -5,8 +5,12 @@
 
 PutVoxel::PutVoxel(int _l, int _c, int _p, float _r, float _g, float _b, float _a)
 {
-    l = _l; c = _c; p = _p;
-    r = _r; g = _g; b = _b;
+    l = _l;
+    c = _c;
+    p = _p;
+    r = _r;
+    g = _g;
+    b = _b;
     a = _a;
 }
 

@@ -10,7 +10,7 @@ class Interpreter
     public:
         Interpreter();
         ~Interpreter();
-        void parse(char *filename);
+        void parse(char *filename, char *path);
 };
 
 #endif
