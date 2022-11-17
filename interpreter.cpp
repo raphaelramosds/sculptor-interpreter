@@ -16,9 +16,36 @@
 #include "headers/cutellipsoid.h"
 #include "headers/interpreter.h"
 
-Interpreter::Interpreter()
+Interpreter::Interpreter(char *_filename)
 {
+    std::string token;
+    filename = _filename;
+
+    fin.open(_filename);
+
     std::cout << "init: reading file" << std::endl;
+
+    if (!fin.is_open())
+    {
+        std::cout << "error: file not found \n";
+        exit(EXIT_FAILURE);
+    }
+
+    while (fin.good())
+    {
+        fin >> token;
+
+        if (token.compare("dim") == 0)
+        {
+            int l, c, p;
+            fin >> l >> c >> p;
+            dimx = l;
+            dimy = c;
+            dimz = p;
+        }
+    }
+
+    fin.close();
 }
 
 Interpreter::~Interpreter()
@@ -26,16 +53,24 @@ Interpreter::~Interpreter()
     std::cout << "success: file interpreted" << std::endl;
 }
 
-void Interpreter::parse(char *filename, char *path)
-{
-    // Matriz 3D e suas propriedades
+int Interpreter::getDimX() {
+    return dimx;
+}
 
-    Sculptor *object;
+int Interpreter::getDimY() {
+    return dimy;
+}
+
+int Interpreter::getDimZ() {
+    return dimz;
+}
+
+std::vector<FiguraGeometrica*> Interpreter::parse()
+{
+    // Vetor de estruturas e token
 
     std::string token;
     float r, g, b, a;
-
-    // Vetor de estruturas
 
     std::vector<FiguraGeometrica *> shapes;        // vetor
     std::vector<FiguraGeometrica *>::iterator its; // iterador
@@ -59,13 +94,6 @@ void Interpreter::parse(char *filename, char *path)
 
         if (!fin.good())
             break;
-
-        if (token.compare("dim") == 0)
-        {
-            int l, c, p;
-            fin >> l >> c >> p;
-            object = new Sculptor(l, c, p);
-        }
 
         if (token.compare("putvoxel") == 0)
         {
@@ -126,17 +154,8 @@ void Interpreter::parse(char *filename, char *path)
         }
     }
 
-    // Desenhar formas
+    fin.close();
 
-    for (auto it : shapes)
-        it->draw(*object); // passamos o endereço da matriz e não o endereço do seu ponteiro
+    return shapes;
 
-    // Liberar bloco de figuras
-
-    for (its = shapes.begin(); its != shapes.end(); its++)
-        delete[] * its;
-
-    // Exportar OFF
-
-    object->writeOFF(path);
 }

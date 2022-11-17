@@ -17,17 +17,18 @@ PutEllipsoid::PutEllipsoid(int _xcenter, int _ycenter, int _zcenter, int _rx, in
 
 void PutEllipsoid::draw(Sculptor &t)
 {
-    float s = xcenter, u = ycenter;
+
+    t.setColor(r,g,b,a);
 
     for (int p = zcenter - rz; p < zcenter + rz; p++)
     {
-        for (int l = s - rx; l < s + rx; l++)
+        for (int l = xcenter - rx; l < xcenter + rx; l++)
         {
-            for (int c = u - ry; c < u + ry; c++)
+            for (int c = ycenter - ry; c < ycenter + ry; c++)
             {
 
-                float x = (float)(l - s) / rx;
-                float y = (float)(c - u) / ry;
+                float x = (float)(l - xcenter) / rx;
+                float y = (float)(c - ycenter) / ry;
                 float z = (float)(p - zcenter) / rz;
 
                 if (x * x + y * y + z * z <= 1)

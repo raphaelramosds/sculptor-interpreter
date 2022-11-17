@@ -2,15 +2,26 @@
 #define INTERPRETER_H
 
 #include <fstream>
+#include <vector>
+
+#include "figurageometrica.h"
 
 class Interpreter
 {
     std::ifstream fin;
+    char *filename;
+
+    int dimx;
+    int dimy;
+    int dimz;
 
     public:
-        Interpreter();
+        Interpreter(char* _filename);
         ~Interpreter();
-        void parse(char *filename, char *path);
+        std::vector<FiguraGeometrica*> parse();
+        int getDimX();
+        int getDimY();
+        int getDimZ();
 };
 
 #endif
