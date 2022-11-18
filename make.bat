@@ -21,7 +21,5 @@ g++ -o programa sculptor.o putvoxel.o cutvoxel.o putbox.o cutbox.o putsphere.o c
 
 programa
 
-shape.off
-
 del *.o
 del programa.exe
