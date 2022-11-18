@@ -7,12 +7,9 @@
 
 int main()
 {
-    Interpreter* keven, *taca;
+    Interpreter* keven;
 
     keven = new Interpreter((char*) "assets/keven.txt");
-    keven->exportf((char*) "assets/keven.off");
-
-    taca = new Interpreter((char*) "assets/taca.txt");
-    taca->exportf((char*) "assets/taca.off");
+    keven->exportf("assets/keven.off");
 
 }

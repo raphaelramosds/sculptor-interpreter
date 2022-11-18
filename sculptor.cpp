@@ -56,7 +56,7 @@ void Sculptor::putVoxel(int x, int y, int z) {
         v[x][y][z].r = r; v[x][y][z].g = g; v[x][y][z].b = b;
         v[x][y][z].a = a;
     } else {
-        std::cout << "error: incorrect index";
+        std::cout << "error: incorrect index at " << x << " " << y << " " << z << std::endl;
     }
 }
 
@@ -66,7 +66,7 @@ void Sculptor::cutVoxel(int x, int y, int z) {
     if ((x < nx && x >= 0) && (y < ny && y >= 0) && (z < nz && z >= 0)) {
         v[x][y][z].isOn = false;
     } else {
-        std::cout << "error: incorrect index";
+        std::cout << "error: incorrect index at " << x << " " << y << " " << z << std::endl;
     }
 }
 

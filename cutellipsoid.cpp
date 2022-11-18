@@ -24,7 +24,7 @@ void CutEllipsoid::draw(Sculptor &t)
                 float y = (float)(c - ycenter) / ry;
                 float z = (float)(p - zcenter) / rz;
 
-                if (x * x + y * y + z * z <= 1)
+                if (x * x + y * y + z * z < 1)
                     t.cutVoxel(l, c, p);
             }
         }
