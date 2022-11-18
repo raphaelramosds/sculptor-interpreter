@@ -53,24 +53,14 @@ Interpreter::~Interpreter()
     std::cout << "success: file interpreted" << std::endl;
 }
 
-int Interpreter::getDimX() {
-    return dimx;
-}
-
-int Interpreter::getDimY() {
-    return dimy;
-}
-
-int Interpreter::getDimZ() {
-    return dimz;
-}
-
-std::vector<FiguraGeometrica*> Interpreter::parse()
+void Interpreter::exportf(char* path)
 {
     // Vetor de estruturas e token
 
     std::string token;
     float r, g, b, a;
+
+    Sculptor* t;
 
     std::vector<FiguraGeometrica *> shapes;        // vetor
     std::vector<FiguraGeometrica *>::iterator its; // iterador
@@ -156,6 +146,19 @@ std::vector<FiguraGeometrica*> Interpreter::parse()
 
     fin.close();
 
-    return shapes;
+    // Desenhar formas
 
+    t = new Sculptor(dimx, dimy, dimz);
+
+    for (auto it : shapes)
+        it->draw(*t); // passamos o endereço da matriz e não o endereço do seu ponteiro!
+
+    // Liberar bloco de figuras
+
+    for (its = shapes.begin(); its != shapes.end(); its++)
+        delete[] * its;
+
+    // Exportar OFF
+
+    t->writeOFF(path);
 }

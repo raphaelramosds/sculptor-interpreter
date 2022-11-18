@@ -18,10 +18,7 @@ class Interpreter
     public:
         Interpreter(char* _filename);
         ~Interpreter();
-        std::vector<FiguraGeometrica*> parse();
-        int getDimX();
-        int getDimY();
-        int getDimZ();
+        void exportf(char* path);
 };
 
 #endif
