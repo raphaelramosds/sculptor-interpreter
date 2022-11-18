@@ -4,6 +4,11 @@
 #include "figurageometrica.h"
 #include "sculptor.h"
 
+/**
+ * @brief CutVoxel removes a voxel
+ * @details This concrete class is used to cut a volume element of a specific index
+ * */
+
 class CutVoxel : public FiguraGeometrica {
     int l, c, p;
 

@@ -4,6 +4,11 @@
 #include "figurageometrica.h"
 #include "sculptor.h"
 
+/**
+ * @brief PutBox add a 3D box
+ * @details This concrete class is used to add a box on an especific index
+ * */
+
 class PutBox : public FiguraGeometrica {
     int x0, x1, y0, y1, z0, z1;
     float r,g,b,a;

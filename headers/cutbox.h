@@ -4,6 +4,11 @@
 #include "figurageometrica.h"
 #include "sculptor.h"
 
+/**
+ * @brief CutBox removes a 3D box
+ * @details This concrete class is used to cut a box out of a especific index
+ * */
+
 class CutBox : public FiguraGeometrica {
     int x0, x1, y0, y1, z0, z1;
 

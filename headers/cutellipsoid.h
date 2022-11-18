@@ -4,6 +4,11 @@
 #include "figurageometrica.h"
 #include "sculptor.h"
 
+/**
+ * @brief CutEllipsoid removes a 3D ellipsoid
+ * @details This concrete class is used to cut an ellipsoid of a specific position
+ * */
+
 class CutEllipsoid : public FiguraGeometrica {
 
     int xcenter, ycenter, zcenter, rx, ry, rz;

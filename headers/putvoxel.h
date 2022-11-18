@@ -4,6 +4,12 @@
 #include "figurageometrica.h"
 #include "sculptor.h"
 
+/**
+ * @brief PutVoxel addes a voxel on a 3D matrix
+ * @details This concrete class is used to add a volume element on a specific index
+ * */
+
+
 class PutVoxel : public FiguraGeometrica {
     int l, c, p;
     float r,g,b,a;

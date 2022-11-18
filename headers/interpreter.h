@@ -6,6 +6,11 @@
 
 #include "figurageometrica.h"
 
+/**
+ * @brief Intepreter
+ * @details 
+ * */
+
 class Interpreter
 {
     std::ifstream fin;

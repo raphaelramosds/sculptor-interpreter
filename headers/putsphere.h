@@ -4,6 +4,11 @@
 #include "figurageometrica.h"
 #include "sculptor.h"
 
+/**
+ * @brief PutSphere add a 3D sphere
+ * @details This concrete class is used to add a sphere on an especific index
+ * */
+
 class PutSphere : public FiguraGeometrica {
 
     int xcenter, ycenter, zcenter, radius;

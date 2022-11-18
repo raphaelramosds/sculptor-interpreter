@@ -4,6 +4,11 @@
 #include "figurageometrica.h"
 #include "sculptor.h"
 
+/**
+ * @brief CutSphere removes a 3D sphere
+ * @details This concrete class is used to cut a sphere of a specific position
+ * */
+
 class CutSphere : public FiguraGeometrica {
 
     int xcenter, ycenter, zcenter, radius;

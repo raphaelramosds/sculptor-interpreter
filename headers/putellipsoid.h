@@ -4,6 +4,11 @@
 #include "figurageometrica.h"
 #include "sculptor.h"
 
+/**
+ * @brief PutEllipsoid add a 3D ellipsoid
+ * @details This concrete class is used to add an ellipsoid on an especific index
+ * */
+
 class PutEllipsoid : public FiguraGeometrica {
 
     int xcenter, ycenter, zcenter, rx, ry, rz;
