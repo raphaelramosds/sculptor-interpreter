@@ -10,6 +10,13 @@
  * */
 
 class CutVoxel : public FiguraGeometrica {
+    
+    /**
+    * @param l indicates line (x coordinate)
+    * @param c indidcates column (y coordinate)
+    * @param p indidcates plano (z coordinate)
+    */
+
     int l, c, p;
 
     public:

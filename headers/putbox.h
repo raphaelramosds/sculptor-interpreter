@@ -7,6 +7,12 @@
 /**
  * @brief PutBox add a 3D box
  * @details This concrete class is used to add a box on an especific index
+ * @param x0 start index on x
+ * @param x1 end index on x
+ * @param y0 start index on y
+ * @param y1 end index on y
+ * @param z0 start index on z
+ * @param z1 end index on z
  * */
 
 class PutBox : public FiguraGeometrica {
