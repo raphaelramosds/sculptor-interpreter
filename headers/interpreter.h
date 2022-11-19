@@ -7,8 +7,8 @@
 #include "figurageometrica.h"
 
 /**
- * @brief Intepreter
- * @details This classe basically creates a new input stream on a `txt` file filled by instructions that can be interpreted in order to draw the wished sculpture
+ * @brief Interpreter
+ * @details This class basically creates a new input stream on a `txt` file filled by instructions that can be interpreted in order to draw the wished sculpture
  * */
 
 class Interpreter
@@ -26,7 +26,7 @@ class Interpreter
 
     public:
         /**
-         * @details Intepreter is the constructor. It receives `char* _filename` as the unique parameter. This string is the path for the `txt` file to be interptreted.
+         * @details Interpreter is the constructor. It receives `char* _filename` as the unique parameter. This string is the path for the `txt` file to be interptreted.
          */
         Interpreter(char *_filename);
         ~Interpreter();
