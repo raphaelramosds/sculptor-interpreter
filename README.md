@@ -25,10 +25,9 @@ On that way, `Interpreter` class can make use of these classes for drawing and e
 
 int main()
 {
-    Interpreter* sculpture; // calling interpreter
-    sculpture = new Interpreter((char*) "assets/sample.txt"); // read instructions on sample.txt
+    Interpreter* sculpture; // call interpreter
+    sculpture = new Interpreter((char*) "assets/sample.txt"); // read instructions of sample.txt
     sculpture->exportf("assets/sample.off"); // export off
-
 }
 ```
 
